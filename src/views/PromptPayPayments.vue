@@ -1,8 +1,13 @@
 <template>
   <div class="pp-admin">
     <header><h2>{{ $t('promptpayAdmin.title') }}</h2></header>
-    <div v-if="loading">{{ $t('promptpayAdmin.loading') }}</div>
-    <table v-else-if="payments.length > 0" class="txtable">
+    <div v-if="loading">
+      {{ $t('promptpayAdmin.loading') }}
+    </div>
+    <table
+      v-else-if="payments.length > 0"
+      class="txtable"
+    >
       <thead>
         <tr>
           <th>Invoice</th>
@@ -14,7 +19,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="p in payments" :key="p.id">
+        <tr
+          v-for="p in payments"
+          :key="p.id"
+        >
           <td>{{ p.invoice_no }}</td>
           <td>{{ p.amount }} {{ p.currency }}</td>
           <td>{{ p.reference }}</td>
@@ -24,7 +32,9 @@
         </tr>
       </tbody>
     </table>
-    <div v-else>{{ $t('promptpayAdmin.empty') }}</div>
+    <div v-else>
+      {{ $t('promptpayAdmin.empty') }}
+    </div>
   </div>
 </template>
 
